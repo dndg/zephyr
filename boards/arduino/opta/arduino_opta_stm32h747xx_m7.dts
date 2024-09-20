@@ -101,6 +101,7 @@ zephyr_udc0: &usbotg_fs {
 	};
 };
 
+/* Assign USB to M7 by default */
 &usbotg_fs {
 	status = "okay";
 };
@@ -113,6 +114,7 @@ zephyr_udc0: &usbotg_fs {
 	status = "okay";
 };
 
+/* Assign ethernet to M7 by default */
 &mac {
 	pinctrl-0 = <
 		&eth_ref_clk_pa1
@@ -128,7 +130,6 @@ zephyr_udc0: &usbotg_fs {
 };
 
 &mdio {
-	status = "okay";
 	pinctrl-0 = <&eth_mdio_pa2 &eth_mdc_pc1>;
 	pinctrl-names = "default";
 
@@ -137,6 +138,7 @@ zephyr_udc0: &usbotg_fs {
 		reg = <0x00>;
 		status = "okay";
 	};
+	status = "okay";
 };
 
 &rng {
