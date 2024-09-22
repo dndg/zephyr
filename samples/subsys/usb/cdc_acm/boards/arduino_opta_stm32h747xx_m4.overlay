@@ -1,0 +1,37 @@
+/*
+ * Copyright (c) 2023 Felipe Neves
+ * Copyright (c) 2024 DNDG srl
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+ / {
+	chosen {
+		zephyr,console = &cdc_acm_uart0;
+		zephyr,shell-uart = &cdc_acm_uart0;
+		zephyr,cdc-acm-uart0 = &cdc_acm_uart0;
+	};
+};
+
+zephyr_udc0: &usbotg_fs {
+	pinctrl-0 = <&usb_otg_fs_dm_pa11 &usb_otg_fs_dp_pa12>;
+	pinctrl-names = "default";
+	status = "okay";
+
+	cdc_acm_uart0: cdc_acm_uart0 {
+		compatible = "zephyr,cdc-acm-uart";
+	};
+};
+
+&usbotg_fs {
+	status = "okay";
+};
+
+&usbotg_hs {
+	status = "disabled";
+};
+
+&cdc_acm_uart0 {
+	status = "okay";
+};
+

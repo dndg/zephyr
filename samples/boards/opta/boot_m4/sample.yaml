@@ -1,0 +1,9 @@
+sample:
+  description: Boot the M4 processor
+  name: opta_boot_m4
+tests:
+  sample.boards.opta.boot_m4:
+    build_only: true
+    platform_allow: arduino_opta
+    tags:
+      - board

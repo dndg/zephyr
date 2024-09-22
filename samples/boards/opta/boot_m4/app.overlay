@@ -1,0 +1,9 @@
+/* Disable some subsystems to allow M4 to used them. */
+&usbotg_fs {
+	status = "disabled";
+};
+
+&cdc_acm_uart0 {
+	status = "disabled";
+};
+
